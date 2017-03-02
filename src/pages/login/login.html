@@ -1,0 +1,30 @@
+<ion-content padding class="login">
+  <div class="parent">
+    <div [hidden]="ctrlLogo" class="logo">
+      <img src="./assets/images/logo.jpg">
+    </div>
+
+    <form [formGroup]="formGroup" (ngSubmit)="login(formGroup.value)">
+      <ion-item>
+        <ion-label stacked> E-mail </ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <div class="error-field" *ngIf="formGroup.controls.email.errors && formGroup.controls.email.touched"> Este campo é necessário </div>
+      <ion-item>
+        <ion-label stacked> Senha </ion-label>
+        <ion-input type="password"  formControlName="password"></ion-input>
+      </ion-item>
+      <div class="error-field" *ngIf="formGroup.controls.password.errors && formGroup.controls.password.touched"> Este campo é necessário e deve conter 6 digitos </div>
+      <div padding>
+        <button ion-button full color="dark" [disabled]="!formGroup.valid"> Login </button>
+      </div>
+    </form>
+
+    <div padding>
+      <button ion-button item-right icon-left full color="facebook" (click)="loginFacebook()">
+        <ion-icon name="logo-facebook"></ion-icon> Facebook
+      </button>
+    </div>
+
+  </div>
+</ion-content>

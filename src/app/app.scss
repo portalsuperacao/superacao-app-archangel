@@ -1,0 +1,171 @@
+* {
+  font-family: $font-family;
+}
+
+.background-color-dark {
+  background: $background-color-dark;
+}
+.background-color-overcomer {
+  background-color: $overcomer-color;
+}
+.background-color-angel {
+  background-color: $angel-color;
+}
+.background-color-archangel {
+  background-color: $archangel-color;
+}
+
+h1 {
+  font-size: $font-size * 1.50;
+  color: $text-secondary;
+}
+h2 {
+  font-size: $font-size * 1.35;
+  color: $text-secondary;
+}
+h3 {
+  font-size: $font-size * 1.25;
+  color: $text-secondary;
+}
+h4 {
+  font-size: $font-size * 1.15;
+  color: $text-secondary;
+}
+h5 {
+  font-size: $font-size ;
+  color: $text-secondary;
+}
+
+p {
+  color: $text-primary;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+ion-footer {
+  &::before {
+    background: none !important;
+  }
+}
+
+.menu {
+  ion-col {
+    color: #696969;
+  }
+}
+
+.simple-item {
+  padding: 0 !important;
+  div {
+    padding-left: 8px;
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #DDD;
+}
+
+.ion-ios-agenda, .ion-md-agenda {
+ content: url(../assets/images/agenda.svg);
+ width: 24px;
+ height: 32px;
+ padding: 6px 4px 2px;
+ opacity: 0.9;
+}
+
+.ion-ios-anjos, .ion-md-anjos {
+  content: url(../assets/images/anjos.svg);
+  width: 24px;
+  height: 32px;
+  padding: 6px 4px 2px;
+  opacity: 0.9;
+}
+
+.ion-ios-perfil, .ion-md-perfil {
+  content: url(../assets/images/perfil.svg);
+  width: 24px;
+  height: 32px;
+  padding: 6px 4px 2px;
+  opacity: 0.9;
+}
+
+.error-field {
+  display: block;
+  background: #f2dede;
+  color: #a94442;
+  margin-top: 0.5rem;
+  padding: 0.6em;
+  margin-left: 16px;
+}
+
+.custom-segment {
+  ion-segment-button {
+    height: 4rem !important;
+    line-height: 4.5rem !important;
+    border: none !important;
+    color: $background-color-blue !important;
+    background: none !important;
+  }
+
+  span {
+    position: relative;
+    left: 5px;
+    bottom: 5px;
+  }
+
+  .segment-activated {
+    background: #e7e7e7 !important;
+  }
+}
+
+.input-field {
+  margin: ($spacing-elements * 3) 0;
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  > * {
+    background-color: #FFF;
+    padding: $spacing-elements;
+    box-shadow: none;
+    border-bottom: solid 1px #DDD;
+    font-size: $font-size !important;
+    color: $text-light;
+    &:last-child {
+      border: none;
+    }
+  }
+  .item-inner {
+    border-bottom: none !important;
+  }
+  .item-block {
+    min-height: 0;
+  }
+  .datetime {
+    color: $text-light;
+    > * {
+      display: block;
+      float: left;
+      width: 33%;
+    }
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+  select, input {
+    border: none;
+  }
+  ion-textarea {
+    min-height: 100px;
+  }
+  ion-icon {
+    float: right;
+  }
+}
