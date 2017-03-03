@@ -7,8 +7,12 @@ import { ArchangelChatPage } from '../pages/archangel/chat/chat';
 import { ArchangelMissionsPage } from '../pages/archangel/missions/missions';
 import { LoginPage } from '../pages/login/login'
 import { ProfilePage } from '../pages/profile/profile';
-import { VisitorPage } from '../pages/visitor/visitor';
+import { ProfileEditPage } from '../pages/profile/edit/edit';
+import { CalendarPublicEventPage } from '../pages/calendar-public-event/calendar-public-event';
 
+// COMPONENTS / PIPES / DIRECTIVES
+import { DateCustomPipe } from '../pipes/date-custom-pipe';
+import { TruncatePipe } from '../pipes/truncate-pipe';
 
 // PROVIDERS
 import { AngularFireModule } from 'angularfire2';
@@ -20,7 +24,6 @@ import { ChatStorageService } from '../providers/database/chat-storage-service';
 import { DateUtil } from '../providers/util/date-util';
 import { Utils } from '../providers/util/utils';
 
-
 export const firebaseConfig = {
    apiKey: "AIzaSyAnTqOEZHBU-1CMx0fKY2v4zFeGvPnvA1I",
    authDomain: "superacao-dc62e.firebaseapp.com",
@@ -31,14 +34,18 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    MyApp,
-    TabsPage,
     ArchangelChatPage,
     ArchangelMissionsPage,
     ChatPage,
-    ProfilePage,
+    CalendarPublicEventPage,
+    DateCustomPipe,
+    TruncatePipe,
     LoginPage,
-    VisitorPage
+    MyApp,
+    ProfilePage,
+    TabsPage,
+    ProfileEditPage,
+
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -50,10 +57,11 @@ export const firebaseConfig = {
     TabsPage,
     ArchangelChatPage,
     ArchangelMissionsPage,
+    CalendarPublicEventPage,
     ChatPage,
     ProfilePage,
+    ProfileEditPage,
     LoginPage,
-    VisitorPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

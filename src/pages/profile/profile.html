@@ -1,18 +1,50 @@
-<!--
-  Generated template for the Profile page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Profile</ion-title>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"> </ion-icon>
+    </button>
+    <ion-title>Meu perfil</ion-title>
   </ion-navbar>
-
 </ion-header>
 
+<ion-content class="background-dark">
+  <div class="avatar trinity">
+    <div class="thumb">
+      <img [src]="(user | async)?.avatar" [ngClass]="thumbClass"/>
+      <div [hidden]="(user | async)?.type_user != 'Superador'" class="emotion">
+        <img [src]="(user | async)?.emotion?.img">
+      </div>
+    </div>
+    <div class="name"> {{ (user | async)?.name }} </div>
+    <div class="type"> {{ (user | async)?.type_user }} </div>
+  </div>
 
-<ion-content padding>
+  <div class="profile-datas">
+    <button ion-button clear full color="primary" (click)="openEdit()">
+      <ion-icon name="ios-create-outline"> </ion-icon> Editar perfil
+     </button>
+    <div class="datas">
+      <div class="right">
+        <div class="title"> Professora </div>
+        <div class="title"> 38 anos </div>
+      </div>
+      <div class="left">
+        <div class="title"> Casada </div>
+        <div class="title"> 0 filhos </div>
+      </div>
+      <div class="clear"> </div>
+    </div>
 
+    <div class="divider"> </div>
+
+    <div class="datas">
+      <div class="title"> Mensagem </div>
+      <div class="text"> Tudo passa! Passou pra min e passará pra você também </div>
+    </div>
+
+    <div class="others">
+      <div class="title"> Cancêr de mama </div>
+      <div class="text"> Radioterapia huds s ahduhds auhdsa </div>
+    </div>
+  </div>
 </ion-content>

@@ -8,15 +8,15 @@ import { AuthService } from '../providers/database/auth-service';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { ProfilePage } from '../pages/profile/profile';
-import { VisitorPage } from '../pages/visitor/visitor';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
 
-  profilePage : any;
+  profilePage : any = ProfilePage;
   rootPage : any = TabsPage;
+  mainPage: any = TabsPage;
 
   constructor(
     public platform: Platform,
@@ -32,7 +32,7 @@ export class MyApp {
           return
         }
 
-        this._verifyIfUserIsArchangel().then((validate) => {
+        this._verifyIfUserIsArchangel().then(() => {
           this.menuCtrl.enable(true);
           this.rootPage = TabsPage;
         }).catch(() => {

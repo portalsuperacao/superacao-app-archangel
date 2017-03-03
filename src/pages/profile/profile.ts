@@ -1,22 +1,43 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
+import { ProfileEditPage } from './edit/edit';
+import { UserStorageService } from '../../providers/database/user-storage-service';
 
-/*
-  Generated class for the Profile page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-profile',
   templateUrl: 'profile.html'
 })
-export class ProfilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+export class ProfilePage {
+  user: any;
+  thumbClass: any
+
+  constructor(
+    public navCtrl: NavController,
+    public modalCtrl: ModalController,
+    public userStorageService: UserStorageService) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+    this.user = this.userStorageService.getUserObs();
+    this._verifyClassOfThumb();
+  }
+
+  openEdit() {
+    this.user.subscribe((user) => {
+      let modal = this.modalCtrl.create(ProfileEditPage, {user: user});
+      modal.present();
+    });
+  }
+
+  _verifyClassOfThumb() {
+    this.user.subscribe((datas : any) => {
+      if(datas.type_user == 'Superador') {
+        this.thumbClass = 'background-color-overcomer';
+      } else if (datas.type_user == 'Anjo') {
+        this.thumbClass = 'background-color-angel';
+      }
+    })
   }
 
 }

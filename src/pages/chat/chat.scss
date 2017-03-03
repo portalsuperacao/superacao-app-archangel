@@ -1,3 +1,105 @@
-page-chat {
+.chat {
+  background: rgb(227, 224, 230);
 
+  ion-title {
+    div {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 $spacing-elements / 2;
+    }
+    .avatar {
+      width: 35px;
+      height: 35px;
+      padding: 2px;
+      border-radius: 100%;
+      overflow: hidden;
+      img {
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  .message {
+    font-size: 1.6rem;
+    .message1 {
+      display: block;
+      background: #FFF;
+      max-width: 80%;
+      margin: 0 0 0.5em;
+      border-radius: 1em;
+      padding: 0.5em 1em;
+      float: left;
+      line-height: 2rem;
+      color: #696969;
+    }
+    .message2 {
+      display: block;
+      background: $background-color-main;
+      max-width: 80%;
+      margin: 0 0 0.5em;
+      border-radius: 1em;
+      padding: 0.5em 1em;
+      float: right;
+      line-height: 2rem;
+      color: #FFF;
+    }
+    .message-status {
+      display: block;
+      background: $background-color-blue;
+      max-width: 100%;
+      margin: 0 0 0.5em;
+      border-radius: 1em;
+      padding: 0.5em 1em;
+      line-height: 2.7rem;
+      color: #FFF;
+      text-align: center;
+      font-size: 2rem;
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+    .thumb1 {
+      background: #FFF;
+      padding: 1em;
+      margin: 0 0 0.5em;
+      border-radius: 1em;
+    }
+    .thumb2 {
+      background: #9170b1;
+      padding: 0.8em;
+      margin: 0 0 0.5em;
+      border-radius: 1em;
+    }
+  }
+  .footer {
+    position: absolute;
+    ion-col {
+      padding: 0;
+      margin: 0;
+    }
+    ion-input {
+      display: block;
+      width: 100%;
+      resize: none;
+      border: none;
+      background: #FFF;
+      border-radius: 0.3em;
+      padding: 0 10px;
+    }
+    button {
+      display: block;
+      width: 40px;
+      height: 40px;
+      background: $background-color-blue;
+      margin: 0 auto;
+      ion-icon {
+        color: #FFF;
+      }
+    }
+  }
 }

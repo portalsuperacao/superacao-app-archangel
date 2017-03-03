@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title> Perfil de {{ user.name }} </ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="closePage()">
+        <ion-icon name="close"> </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background-color-dark">
+    <div class="input-field">
+      <ion-input placeholder="Nome" type="text"></ion-input>
+      <ion-input placeholder="Email" type="text"></ion-input>
+      <ion-input placeholder="Type" type="text"></ion-input>
+    </div>
+
+    <button ion-button>enviar</button>
+</ion-content>
